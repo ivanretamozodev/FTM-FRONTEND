@@ -1,12 +1,13 @@
 @import "/src/styles/variables";
 .card{
-    width: 200px;
-    background-color: $grey-color;
+    width: 150px;
+    border: 1px solid $grey-color;
     border-radius: 0.5rem;
     padding: 0.3rem;
     transition: all 0.2 ease;
     &__title{
-        font-size: 1.2rem;
+        font-size: 1rem;
+        font-weight: lighter;
         padding: 0.8rem;
         text-align: center;
     }
@@ -16,7 +17,7 @@
         justify-content: space-around;
     }
     i{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     &:hover{
         transform: scale(1.01);

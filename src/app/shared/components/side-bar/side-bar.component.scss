@@ -1,16 +1,17 @@
 @import "/src/styles/variables";
 .sidebar{
-    padding: 0.3rem;
-    margin: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     background-color: $black-color;
     border-radius: $border-radius;
+    width: 15.5rem;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
+    padding: .5rem 1rem;
     &__logo{
         padding: 0.3rem;
         h5{
