@@ -1,0 +1,37 @@
+@import "/src/styles/variables";
+
+.search-bar {
+    border-radius: $border-radius;
+    margin: 1rem 1rem 1rem 16rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: end;
+
+    &__input {
+        .input-text {
+            border: none;
+            outline: none;
+            background-color: $black-color;
+            border-bottom: 1px solid $white-color;
+            transition: all 0.3 ease;
+            padding: 0.3rem;
+
+            &::placeholder {
+                color: $white-color;
+            }
+
+            &:focus-visible {
+                color: $white-color;
+            }
+
+            &:focus::placeholder {
+                color: transparent
+            }
+        }
+    }
+
+    i {
+        color: $white-color;
+        margin-left: 0.8rem;
+    }
+}
