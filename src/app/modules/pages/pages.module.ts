@@ -5,9 +5,10 @@ import { PagesRoutingModule } from "./pages-routing.module";
 import { DetailsPageComponent } from "./details-page/details-page.component";
 import { HomePageComponent } from "./home-page/home-page.component";
 import { SharedModule } from "src/app/shared/shared.module";
+import { HelpPageComponent } from './help-page/help-page.component';
 
 @NgModule({
-  declarations: [DetailsPageComponent, HomePageComponent],
+  declarations: [DetailsPageComponent, HomePageComponent, HelpPageComponent],
   imports: [CommonModule, PagesRoutingModule, SharedModule],
 })
 export class PagesModule {}

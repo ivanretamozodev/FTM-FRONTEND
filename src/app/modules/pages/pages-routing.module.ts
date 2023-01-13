@@ -1,24 +1,17 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { DetailsPageComponent } from "./details-page/details-page.component";
+import { HelpPageComponent } from "./help-page/help-page.component";
 import { HomePageComponent } from "./home-page/home-page.component";
 
 const routes: Routes = [
   {
     path: "",
     children: [
-      {
-        path: "home",
-        component: HomePageComponent,
-      },
-      {
-        path: "details/:id",
-        component: DetailsPageComponent,
-      },
-      {
-        path: "**",
-        redirectTo: "home",
-      },
+      { path: "home", component: HomePageComponent },
+      { path: "download/:id", component: DetailsPageComponent },
+      { path: "help", component: HelpPageComponent },
+      { path: "**", redirectTo: "home" },
     ],
   },
 ];

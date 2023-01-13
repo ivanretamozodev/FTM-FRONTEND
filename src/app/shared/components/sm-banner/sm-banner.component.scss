@@ -4,13 +4,30 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.8rem;
-    padding: 1rem;
+    padding: 3rem;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0.615)), url("https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    border-radius: $border-radius;
+    margin: 1rem;
     h2{
         font-weight: 700;
         font-weight: 900;
         font-size: 3.5rem;
+        text-align: center;
         letter-spacing: 0.2rem;
-        color: #3280c3;
+        color: $white-color;
+    }
+    p{
+        font-size: 1.8rem;
+        text-align: center;
+        letter-spacing: 0.1rem;
+        span{
+            font-size: 2rem;
+            font-style: italic;
+            letter-spacing: 0.1rem;
+        }
     }
     
 }

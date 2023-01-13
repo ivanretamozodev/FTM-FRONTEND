@@ -1,6 +1,6 @@
 @import "/src/styles/variables";
 .featured{
-    width: 400px;
+    width: 25rem;
     border-radius: $border-radius;
     border: 1px solid $grey-color;
     padding: 1rem;
@@ -9,7 +9,7 @@
     align-items: center;
     img{
         width: 100%;
-        max-width: 180px;
+        max-width: 11.25rem;
         flex: 1;
     }
     &__text{
@@ -21,6 +21,7 @@
         }
         p{
             font-size: 0.9rem;
+            font-weight: lighter;
             text-align: center;
             line-height: 1.2;
         }
@@ -28,11 +29,12 @@
             margin-top: 1.5rem;
             width: 100%;
             padding: 0.5rem;
+            border: none;
             background-color: $primary-color;
             color: $white-color;
             border-radius: $border-radius;
             outline: none;
-            transition: all 0.5s ease;
+            transition: all 0.2 ease;
             &:hover{
                 cursor: pointer;
                 opacity: 0.9;
