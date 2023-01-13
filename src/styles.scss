@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import "/src/styles/variables";
+@import "./styles/_reset.scss";
+body{
+    background-color: $black-color;
+    font-family: 'Lato', sans-serif;
+
+    color: $white-color;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+}
+a{
+
+    text-decoration: none;
+    color: #ccc
+}
