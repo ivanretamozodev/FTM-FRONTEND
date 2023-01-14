@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { MoviesService } from "./../../../services/movies.service";
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-help-page',
-  templateUrl: './help-page.component.html',
-  styleUrls: ['./help-page.component.scss']
+  selector: "app-help-page",
+  templateUrl: "./help-page.component.html",
+  styleUrls: ["./help-page.component.scss"],
 })
-export class HelpPageComponent {
-
-}
+export class HelpPageComponent {}

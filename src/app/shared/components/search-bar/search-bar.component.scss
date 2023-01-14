@@ -1,17 +1,20 @@
 @import "/src/styles/variables";
 
 .search-bar {
-    border-radius: $border-radius;
-    margin: 1rem 1rem 1rem 16rem;
+  
+    background-color: $grey-color;
+    margin: 0rem 0rem 0rem 10rem;
     padding: 1rem;
     display: flex;
     justify-content: end;
-
+    display: flex;
+    gap: 2rem;
     &__input {
+        align-self: center;
         .input-text {
             border: none;
             outline: none;
-            background-color: $black-color;
+            background-color: $grey-color;
             border-bottom: 1px solid $white-color;
             transition: all 0.3 ease;
             padding: 0.3rem;
@@ -33,5 +36,39 @@
     i {
         color: $white-color;
         margin-left: 0.8rem;
+    }
+    &__btns{
+        display: flex;
+        gap: 0.5rem;
+        width: 250px;
+        .btn-register{
+            background-color: $primary-color;
+            color: $white-color;
+            padding: 0.25rem 0.5rem;
+            border: none;
+            font-size: 1rem;
+            border-radius: $border-radius;
+            transition: background-color 0.3s ease;
+            &:hover{
+                cursor: pointer;
+                background-color: $grey-color;
+                color: $primary-color;
+                border: 1px solid $primary-color;
+            }
+        }
+        .btn-login{
+            background-color: $grey-color;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+            padding: 0.25rem 0.5rem;
+            border-radius: $border-radius;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            &:hover{
+                cursor: pointer;
+                background-color: $primary-color;
+                color: $white-color;
+            }
+        }
     }
 }

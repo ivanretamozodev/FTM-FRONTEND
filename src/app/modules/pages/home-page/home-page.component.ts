@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { SwiperComponent } from "swiper/angular";
 import SwiperCore, { Autoplay, Pagination, SwiperOptions } from "swiper";
 import { ViewEncapsulation } from "@angular/core";
 
@@ -38,7 +37,7 @@ export class HomePageComponent {
         spaceBetween: 20,
       },
       "1400": {
-        slidesPerView: 6,
+        slidesPerView: 7,
         spaceBetween: 20,
       },
     },

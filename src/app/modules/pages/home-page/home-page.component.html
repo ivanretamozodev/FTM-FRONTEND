@@ -8,6 +8,24 @@
     <app-card></app-card>
   </ng-template>
 </swiper>
+<swiper [config]="configFeatures" class="mySwiper">
+  <ng-template
+    class="container"
+    *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+    swiperSlide
+  >
+    <app-featured-card></app-featured-card>
+  </ng-template>
+</swiper>
+<swiper [config]="config" class="mySwiper">
+  <ng-template
+    class="container"
+    *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+    swiperSlide
+  >
+    <app-card></app-card>
+  </ng-template>
+</swiper>
 
 <swiper [config]="configFeatures" class="mySwiper">
   <ng-template

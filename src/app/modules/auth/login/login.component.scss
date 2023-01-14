@@ -1,0 +1,51 @@
+@import "/src/styles/variables";
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .login-form{
+        display: flex;
+        width: 100%;
+        background-color: $grey-color;
+        border-radius: $border-radius;
+        flex-direction: column;
+        width: 320px;
+        height: 420px;
+        margin: 0 auto;
+        justify-content: space-around;
+    align-items: center;
+    h2{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    input{
+        display: block;
+        padding: 1rem;
+        width: 220px;
+        margin: 1.5rem;
+        border-radius: $border-radius;
+    }
+    button{
+        background-color: $primary-color;
+        color: $white-color;
+        padding: 1rem 1.25rem;
+        border: none;
+        font-size: 1rem;
+        border-radius: $border-radius;
+        transition: background-color 0.3s ease;
+        &:hover{
+            cursor: pointer;
+            background-color: $grey-color;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+        }
+    }
+    p{
+        a{
+            color: $primary-color;
+        }
+    }
+    
+}
+}
