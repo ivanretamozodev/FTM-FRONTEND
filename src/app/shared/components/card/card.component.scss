@@ -1,6 +1,7 @@
 @import "/src/styles/variables";
 .card{
-    width: 12.5rem;
+    width: 10rem;
+    background-color: $grey-color;
     border: 1px solid $grey-color;
     border-radius: 0.5rem;
     padding: 0.3rem;
