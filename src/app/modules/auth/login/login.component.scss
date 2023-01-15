@@ -1,9 +1,5 @@
 @import "/src/styles/variables";
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+
     .login-form{
         display: flex;
         width: 100%;
@@ -11,14 +7,16 @@
         border-radius: $border-radius;
         flex-direction: column;
         width: 320px;
-        height: 420px;
         margin: 0 auto;
         justify-content: space-around;
     align-items: center;
+    padding: 2rem;
     h2{
         font-size: 1.3rem;
-        text-align: center;
-    }
+    text-align: center;
+}
+    form{
+
     input{
         display: block;
         padding: 1rem;
@@ -34,6 +32,8 @@
         font-size: 1rem;
         border-radius: $border-radius;
         transition: background-color 0.3s ease;
+        margin-bottom: 1rem;
+        width: 100%;
         &:hover{
             cursor: pointer;
             background-color: $grey-color;
@@ -43,9 +43,18 @@
     }
     p{
         a{
+            margin-top: 1rem;
             color: $primary-color;
         }
     }
     
 }
+
+    .error{
+        margin-bottom: 1rem;
+        p{
+            color: red;
+            text-align: center;
+        }
+    }
 }

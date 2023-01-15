@@ -1,4 +1,3 @@
-import { MoviesService } from "./../../../services/movies.service";
 import { Component } from "@angular/core";
 
 @Component({

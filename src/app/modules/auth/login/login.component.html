@@ -1,14 +1,20 @@
-<div class="container">
-  <div class="login-form">
-    <h2>Iniciar Sesión</h2>
-    <div class="inputs">
-      <label for=""></label>
-      <input placeholder="Email" type="text" />
-      <input placeholder="Contraseña" type="password" />
+<div class="login-form">
+  <h2>Iniciar Sesión</h2>
+  <div class="inputs">
+    <form (ngSubmit)="login()" [formGroup]="loginForm" action="">
+      <input formControlName="email" placeholder="Email" type="text" />
+      <input
+        formControlName="password"
+        placeholder="Contraseña"
+        type="password"
+      />
+      <button type="submit">Inicia sesión</button>
+    </form>
+    <div *ngIf="loginError" class="error">
+      <p>Usuario o contraseña no válida</p>
     </div>
-    <button>Inicia sesión</button>
-    <p>
-      no tiénes una cuenta? registrate <a routerLink="/auth/register">Aqui</a>
-    </p>
   </div>
+  <p>
+    no tiénes una cuenta? registrate <a routerLink="/auth/register">Aqui</a>
+  </p>
 </div>
