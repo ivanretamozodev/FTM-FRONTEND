@@ -23,11 +23,16 @@ export class RegisterComponent {
     private authService: AuthService
   ) {}
 
+  registerError: boolean = false;
+
   register = () => {
     const { email, password, name } = this.registerForm.value;
-    this.authService
-      .register(email, password, name)
-      .subscribe((res) => console.log(res));
-    /* this.router.navigateByUrl("/home"); */
+    this.authService.register(email, password, name).subscribe((auth) => {
+      if (auth) {
+        this.router.navigateByUrl("/home");
+      } else {
+        this.registerError = true;
+      }
+    });
   };
 }

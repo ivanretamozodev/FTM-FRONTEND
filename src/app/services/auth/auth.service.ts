@@ -24,13 +24,8 @@ export class AuthService {
     return this.http.post<AuthResponse>(url, body).pipe(
       tap((user) => {
         if (user.success) {
-          this._user = {
-            name: user.name!,
-            id: user.id!,
-            role: user.role!,
-          };
+          this._user = { name: user.name!, id: user.id! };
         }
-        console.log(this._user);
       }),
       map((res) => res.success),
       catchError((err) => of(false))
@@ -40,6 +35,14 @@ export class AuthService {
   register(email: string, password: string, name: string) {
     const url = `${this.baseUrl}/auth/register`;
     const body = { email, password, name };
-    return this.http.post(url, body);
+    return this.http.post<AuthResponse>(url, body).pipe(
+      tap((user) => {
+        if (user.success) {
+          this._user = { id: user.id, name: user.name };
+        }
+      }),
+      map((res) => res.success),
+      catchError((err) => of(false))
+    );
   }
 }
