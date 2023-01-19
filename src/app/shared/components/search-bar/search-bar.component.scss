@@ -70,5 +70,21 @@
                 color: $white-color;
             }
         }
+        .btn-logout{
+            background-color: $grey-color;
+            border: 1px solid $red-color;
+            color: $red-color;
+            padding: 0.25rem 0.5rem;
+            border-radius: $border-radius;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            align-self: flex-end;
+            &:hover{
+                cursor: pointer;
+                background-color: $red-color;
+                color: $white-color;
+            }
+
+        }
     }
 }

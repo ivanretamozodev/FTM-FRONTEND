@@ -6,20 +6,7 @@
     border-radius: 0.5rem;
     padding: 0.3rem;
     transition: transform 0.2s ease;
-    &__title{
-        font-size: 1rem;
-        font-weight: lighter;
-        padding: 0.8rem;
-        text-align: center;
-    }
-    &__icons{
-        padding: 0.8rem;
-        display: flex;
-        justify-content: space-around;
-    }
-    i{
-        font-size: 1rem;
-    }
+ 
     &:hover{
         transform: scale(1.01);
     }

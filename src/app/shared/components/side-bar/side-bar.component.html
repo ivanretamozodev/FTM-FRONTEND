@@ -23,34 +23,34 @@
  -->
 
 <nav class="nav">
-  <div class="nav__item">
-    <a routerLink="">
-      <i class="bi bi-house"></i>
-      <span class="nav__item-title active">home</span>
-    </a>
-  </div>
-  <div class="nav__item">
-    <a routerLink="">
-      <i class="bi bi-film"></i>
-      <span class="nav__item-title active">Películas</span>
-    </a>
-  </div>
-  <div class="nav__item">
-    <a routerLink="">
-      <i class="bi bi-collection"></i>
-      <span class="nav__item-title active">Favorítas</span>
-    </a>
-  </div>
-  <div class="nav__item">
-    <a routerLink="">
-      <i class="bi bi-question-square"></i>
-      <span class="nav__item-title active">Ayuda</span>
-    </a>
-  </div>
-  <div class="nav__item">
-    <a routerLink="/uploads">
-      <i class="bi bi-cloud-arrow-up"></i>
-      <span class="nav__item-title active">Subir</span>
-    </a>
-  </div>
+    <div class="nav__item">
+        <a routerLink="">
+            <i class="bi bi-house"></i>
+            <span class="nav__item-title active">home</span>
+        </a>
+    </div>
+    <div class="nav__item">
+        <a routerLink="">
+            <i class="bi bi-film"></i>
+            <span class="nav__item-title active">Películas</span>
+        </a>
+    </div>
+    <div class="nav__item">
+        <a routerLink="/genres">
+            <i class="bi bi-collection"></i>
+            <span class="nav__item-title active">Genres</span>
+        </a>
+    </div>
+    <div class="nav__item">
+        <a routerLink="/help">
+            <i class="bi bi-question-square"></i>
+            <span class="nav__item-title active">Ayuda</span>
+        </a>
+    </div>
+    <div class="nav__item" *ngIf="feature">
+        <a routerLink="/uploads">
+            <i class="bi bi-cloud-arrow-up"></i>
+            <span class="nav__item-title active">Subir</span>
+        </a>
+    </div>
 </nav>

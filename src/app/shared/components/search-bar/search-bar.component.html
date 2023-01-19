@@ -1,14 +1,19 @@
 <header class="search-bar">
-  <div class="search-bar__input">
-    <input placeholder="Search Movie" class="input-text" type="text" />
-    <i class="bi bi-search"></i>
-  </div>
-  <div class="search-bar__btns">
-    <a routerLink="/auth/login">
-      <button class="btn-login">iniciar sesion</button>
-    </a>
-    <a routerLink="/auth/register">
-      <button class="btn-register">registrarse</button>
-    </a>
-  </div>
+    <div class="search-bar__input">
+        <input placeholder="Search Movie" class="input-text" type="text" />
+        <i class="bi bi-search"></i>
+    </div>
+    <div class="search-bar__btns" *ngIf="!loggedIn">
+        <a routerLink="/auth/login">
+            <button class="btn-login">iniciar sesion</button>
+        </a>
+        <a routerLink="/auth/register">
+            <button class="btn-register">registrarse</button>
+        </a>
+    </div>
+    <div class="search-bar__btns" *ngIf="loggedIn">
+        <a routerLink="/home" (click)="logOut()">
+            <button class="btn-logout">cerrar sesion</button>
+        </a>
+    </div>
 </header>
