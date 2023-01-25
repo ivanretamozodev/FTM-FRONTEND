@@ -1,38 +1,33 @@
 <app-sm-banner></app-sm-banner>
-<swiper [config]="config" class="mySwiper">
-  <ng-template
-    class="container"
-    *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-    swiperSlide
-  >
-    <app-card></app-card>
-  </ng-template>
-</swiper>
-<swiper [config]="configFeatures" class="mySwiper">
-  <ng-template
-    class="container"
-    *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-    swiperSlide
-  >
-    <app-featured-card></app-featured-card>
-  </ng-template>
-</swiper>
-<swiper [config]="config" class="mySwiper">
-  <ng-template
-    class="container"
-    *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-    swiperSlide
-  >
-    <app-card></app-card>
-  </ng-template>
-</swiper>
-
-<swiper [config]="configFeatures" class="mySwiper">
-  <ng-template
-    class="container"
-    *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-    swiperSlide
-  >
-    <app-featured-card></app-featured-card>
-  </ng-template>
-</swiper>
+<section class="container">
+    <h2>Ultimas Publicaciónes</h2>
+    <swiper [config]="config" class="mySwiper">
+        <ng-template class="container" *ngFor="let movie of movies" swiperSlide>
+            <app-card [movie]="movie"></app-card>
+        </ng-template>
+    </swiper>
+</section>
+<section class="container">
+    <h2>Mejor Valoradas</h2>
+    <swiper [config]="configFeatures" class="mySwiper">
+        <ng-template class="container" *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]" swiperSlide>
+            <app-featured-card></app-featured-card>
+        </ng-template>
+    </swiper>
+</section>
+<section class="container">
+    <h2>Proximamente</h2>
+    <swiper [config]="config" class="mySwiper">
+        <ng-template class="container" *ngFor="let movie of movies" swiperSlide>
+            <app-card [movie]="movie"></app-card>
+        </ng-template>
+    </swiper>
+</section>
+<section class="container">
+    <h2>Estrenos</h2>
+    <swiper [config]="configFeatures" class="mySwiper">
+        <ng-template class="container" *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]" swiperSlide>
+            <app-featured-card></app-featured-card>
+        </ng-template>
+    </swiper>
+</section>

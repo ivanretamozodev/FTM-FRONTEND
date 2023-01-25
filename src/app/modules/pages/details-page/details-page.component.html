@@ -1,1 +1,26 @@
-<p>details-page works!</p>
+<div *ngIf="movie" class="container">
+    <section class="download">
+        <img class="download__image" [src]="movie.posterImage" alt="" />
+        <div>
+            <div class="download__description">
+                <h3>{{ movie.name }}</h3>
+                <div class="download__description-info">
+                    <p>
+                        rating: <span>{{ movie.rating }}</span>
+                    </p>
+                    <p>
+                        año: <span>{{ movie.year }}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="download__about">
+                <p>
+                    {{ movie.description }}
+                </p>
+            </div>
+            <div class="download__button">
+                <button (click)="toDownload()">Descargar</button>
+            </div>
+        </div>
+    </section>
+</div>

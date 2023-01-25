@@ -1,0 +1,44 @@
+@import "/src/styles/variables";
+.container{
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        .first-section{
+            margin-bottom: 1rem;
+            .name{
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+            .rating{
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 1rem;
+
+            }
+        }
+        .second-section{
+           .image{
+            display: flex;
+            align-items: center;
+           /*  flex-direction: column; */
+            gap: 1rem;
+           }
+        }
+        
+        label{
+            display: block;
+            margin:  1rem 0rem; 
+            font-size: 1.1rem;
+        }
+
+        input{
+            padding: 0.5rem;
+            border-radius: $border-radius;
+        }
+    }
+}

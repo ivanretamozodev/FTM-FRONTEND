@@ -8,9 +8,22 @@ export interface Movie {
     genres: Array<Genre>;
     rating: Number;
     posterImage: string;
-    backgroundImage: string;
     description: string;
-    link: String;
     trailer: string;
     featured: boolean;
+    link: string;
+}
+
+export interface MovieResponse {
+    success: boolean;
+    results: AllMovies[];
+}
+export interface MovieDetailResponse {
+    success: boolean;
+    results: Movie;
+}
+
+export interface AllMovies {
+    _id: string;
+    posterImage: string;
 }

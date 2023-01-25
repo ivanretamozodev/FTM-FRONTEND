@@ -1,8 +1,8 @@
 <header class="search-bar">
-    <div class="search-bar__input">
-        <input placeholder="Search Movie" class="input-text" type="text" />
-        <i class="bi bi-search"></i>
+    <div>
+        <h2 class="logo">FT-Movies</h2>
     </div>
+    <div class="spacer"></div>
     <div class="search-bar__btns" *ngIf="!loggedIn">
         <a routerLink="/auth/login">
             <button class="btn-login">iniciar sesion</button>

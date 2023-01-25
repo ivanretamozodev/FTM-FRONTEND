@@ -1,9 +1,8 @@
+import { AllMovies } from './../../../interfaces/movies.interface';
 import { MoviesService } from './../../../services/movies/movies.service';
 import { Component, OnInit } from '@angular/core';
 import SwiperCore, { Autoplay, Pagination, SwiperOptions } from 'swiper';
 import { ViewEncapsulation } from '@angular/core';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { ThisReceiver } from '@angular/compiler';
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -14,13 +13,16 @@ SwiperCore.use([Autoplay, Pagination]);
     encapsulation: ViewEncapsulation.None,
 })
 export class HomePageComponent implements OnInit {
-    constructor(private moviesService: MoviesService) {}
+    constructor(private _moviesService: MoviesService) {}
+    movies: AllMovies[] = [];
+
     ngOnInit(): void {
-        this.moviesService.getMovies().subscribe((res) => console.log(res));
+        this._moviesService.getMovies().subscribe((resp) => (this.movies = resp));
     }
+
     config: SwiperOptions = {
-        slidesPerView: 1.8,
-        spaceBetween: 15,
+        slidesPerView: 1.9,
+        spaceBetween: 5,
         navigation: true,
         breakpoints: {
             '540': {
@@ -51,8 +53,8 @@ export class HomePageComponent implements OnInit {
         pagination: { clickable: true },
     };
     configFeatures: SwiperOptions = {
-        slidesPerView: 0.85,
-        spaceBetween: 15,
+        slidesPerView: 0.79,
+        spaceBetween: 5,
         navigation: true,
         breakpoints: {
             '540': {

@@ -1,10 +1,37 @@
 <div class="container">
     <form action="">
-        <input type="text" placeholder="name" />
-        <input type="number" placeholder="rating" min="0" max="10" />
-        <input type="checkbox" placeholder="is featured" />
-        <input type="text" placeholder="image path" />
-        <input type="text" placeholder="year" />
-        <input type="text" placeholder="trailer" />
+        <div class="first-section">
+            <div class="name">
+                <label for="name">Nombre </label>
+                <input type="text" placeholder="name" />
+                <label for="year">Año</label>
+                <input type="text" placeholder="year" />
+            </div>
+            <div class="rating">
+                <label for="rating">Rating</label>
+                <input id="rating" type="number" placeholder="rating" min="0" max="10" />
+                <label for="trailer">Trailer</label>
+                <input id="trailer" type="text" placeholder="trailer" />
+                <label for="cars">Choose a car:</label>
+
+                <select name="genres" id="genres">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+        </div>
+        <div class="second-section">
+            <div class="image">
+                <label for="">Subir Imagen</label>
+                <input type="file" id="myFile" placeholder="Subir Imagen" />
+                <label for="featured">Es destacada?</label>
+                <input id="featured" type="checkbox" placeholder="is featured" />
+            </div>
+        </div>
+        <label for="description">Descripcion</label>
+        <textarea id="description" name="descripcion" id="" cols="30" rows="10" placeholder="descripcion..."></textarea>
     </form>
+    <app-featured-card></app-featured-card>
 </div>

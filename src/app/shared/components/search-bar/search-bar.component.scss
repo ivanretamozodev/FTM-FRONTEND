@@ -1,46 +1,17 @@
 @import "/src/styles/variables";
 
 .search-bar {
-  
     background-color: $grey-color;
-    margin: 0rem 0rem 0rem 10rem;
     padding: 1rem;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
     display: flex;
-    gap: 2rem;
-    &__input {
-        align-self: center;
-        .input-text {
-            border: none;
-            outline: none;
-            background-color: $grey-color;
-            border-bottom: 1px solid $white-color;
-            transition: all 0.3 ease;
-            padding: 0.3rem;
-
-            &::placeholder {
-                color: $white-color;
-            }
-
-            &:focus-visible {
-                color: $white-color;
-            }
-
-            &:focus::placeholder {
-                color: transparent
-            }
-        }
-    }
-
-    i {
-        color: $white-color;
-        margin-left: 0.8rem;
-    }
+   
     &__btns{
         display: flex;
-        gap: 0.5rem;
-        width: 250px;
+        gap:  0.5rem;
+        
         .btn-register{
             background-color: $primary-color;
             color: $white-color;
@@ -78,7 +49,6 @@
             border-radius: $border-radius;
             font-size: 1rem;
             transition: background-color 0.3s ease;
-            align-self: flex-end;
             &:hover{
                 cursor: pointer;
                 background-color: $red-color;
@@ -86,5 +56,10 @@
             }
 
         }
+    }
+}
+@media (min-width: 900px) {
+    .search-bar{
+        margin: 0rem 0rem 0rem 10rem;
     }
 }

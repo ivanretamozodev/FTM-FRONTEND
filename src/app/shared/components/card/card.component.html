@@ -1,8 +1,5 @@
 <div class="card">
-    <a href="">
-        <img
-            src="https://cinecalidad.run/wp-content/webp-express/webp-images/uploads/2022/11/kAHPDqUUciuObEoCgYtHttt6L2Q-scaled.jpg.webp"
-            alt=""
-        />
+    <a [routerLink]="['/download', movie?._id]">
+        <img [src]="movie?.posterImage" alt="" />
     </a>
 </div>

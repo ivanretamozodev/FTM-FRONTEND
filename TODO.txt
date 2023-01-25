@@ -1,0 +1,9 @@
+1 hacer la pantalla de cargar peliculas con su debido interceptor HTTP.
+
+2-hacer la pantalla de detalles de las peliculas,links de descarga y botones correspondientes
+de entrada y salida.
+
+3-hacer la pantalla en la cual el usuario vea todas las peliculas,y pueda filtrarla por año de salida,
+genero,nombre y calificación,tanto ascendente,como descendente.
+
+4-hacer la pantalla de ayuda,clara y sin mucha dificultad para el usuario. 
