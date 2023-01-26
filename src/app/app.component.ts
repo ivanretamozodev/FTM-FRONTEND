@@ -1,10 +1,12 @@
-import { Subject, tap } from 'rxjs';
+import { SpinnerService } from './services/spinner/spinner.service';
 import { Component } from '@angular/core';
-import { LocalstorageService } from './services/localstorage/localstorage.service';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {}
+export class AppComponent {
+    isLoading$ = this._spinnerService.isLoading$;
+    constructor(private _spinnerService: SpinnerService) {}
+}

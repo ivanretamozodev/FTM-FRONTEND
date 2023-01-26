@@ -1,3 +1,4 @@
+import { SpinnerService } from './../../../services/spinner/spinner.service';
 import { AllMovies } from './../../../interfaces/movies.interface';
 import { MoviesService } from './../../../services/movies/movies.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,8 @@ SwiperCore.use([Autoplay, Pagination]);
     encapsulation: ViewEncapsulation.None,
 })
 export class HomePageComponent implements OnInit {
-    constructor(private _moviesService: MoviesService) {}
+    constructor(private _moviesService: MoviesService, private _spinnerService: SpinnerService) {}
+    isLoading$ = this._spinnerService.isLoading$;
     movies: AllMovies[] = [];
 
     ngOnInit(): void {
