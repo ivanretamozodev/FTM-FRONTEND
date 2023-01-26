@@ -21,6 +21,7 @@ export interface MovieFeatured {
 }
 export interface MovieResponse {
     success: boolean;
+    length: number;
     results: AllMovies[];
 }
 export interface MovieDetailResponse {
