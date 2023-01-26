@@ -13,7 +13,12 @@ export interface Movie {
     featured: boolean;
     link: string;
 }
-
+export interface MovieFeatured {
+    _id: string;
+    name: string;
+    posterImage: string;
+    description: string;
+}
 export interface MovieResponse {
     success: boolean;
     results: AllMovies[];
@@ -23,6 +28,10 @@ export interface MovieDetailResponse {
     results: Movie;
 }
 
+export interface MovieFeaturedResponse {
+    success: boolean;
+    results: MovieFeatured[];
+}
 export interface AllMovies {
     _id: string;
     posterImage: string;

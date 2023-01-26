@@ -11,8 +11,8 @@
     <section class="container">
         <h2>Mejor Valoradas</h2>
         <swiper [config]="configFeatures" class="mySwiper">
-            <ng-template class="container" *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]" swiperSlide>
-                <app-featured-card></app-featured-card>
+            <ng-template class="container" *ngFor="let movie of featuredMovies" swiperSlide>
+                <app-featured-card [movieFeatured]="movie"></app-featured-card>
             </ng-template>
         </swiper>
     </section>

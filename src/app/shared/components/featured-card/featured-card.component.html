@@ -1,12 +1,11 @@
-<div class="featured">
-    <img src="https://cinecalidad.run/wp-content/uploads/2022/12/g4rViLJqZHN18QuvkF7YVPMELnC.jpg" alt="" />
+<div *ngIf="movieFeatured" class="featured">
+    <img [src]="movieFeatured.posterImage" alt="" />
 
     <div class="featured__text">
-        <h2 class="title">Sonic Prime</h2>
+        <h2 class="title">{{ movieFeatured.name }}</h2>
         <p>
-            Cuando una batalla con el Dr. Eggman destruye el universo, Sonic emprende una carrera contrarreloj por
-            dimensiones paralelas para reencontrarse con sus amigos y salvar el mundo.
+            {{ movieFeatured.description }}
         </p>
-        <button routerLink="/download/asad">Ver Detalles</button>
+        <button [routerLink]="['/download', movieFeatured._id]">Ver Detalles</button>
     </div>
 </div>
