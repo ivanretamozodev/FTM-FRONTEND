@@ -22,7 +22,7 @@ export interface MovieFeatured {
 export interface MovieResponse {
     success: boolean;
     length: number;
-    results: AllMovies[];
+    movies: MovieSoftDetail[];
 }
 export interface MovieDetailResponse {
     success: boolean;
@@ -33,7 +33,7 @@ export interface MovieFeaturedResponse {
     success: boolean;
     results: MovieFeatured[];
 }
-export interface AllMovies {
+export interface MovieSoftDetail {
     _id: string;
     posterImage: string;
 }

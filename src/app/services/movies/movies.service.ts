@@ -13,7 +13,7 @@ export class MoviesService {
     constructor(private http: HttpClient) {}
 
     getMovies = () => {
-        return this.http.get<MovieResponse>(`${this.baseUrl}/movies`).pipe(map((data) => data.results));
+        return this.http.get<MovieResponse>(`${this.baseUrl}/movies`).pipe(map((data) => data.movies));
     };
 
     getMoviesDetails = (id: string) => {

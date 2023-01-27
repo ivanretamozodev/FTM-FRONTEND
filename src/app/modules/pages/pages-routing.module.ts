@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { HelpPageComponent } from './help-page/help-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { GenresPageComponent } from './genres-page/genres-page.component';
 
 const routes: Routes = [
     {
@@ -12,6 +13,7 @@ const routes: Routes = [
             { path: 'home', component: HomePageComponent },
             { path: 'download/:id', component: DetailsPageComponent },
             { path: 'movies', component: MoviesPageComponent },
+            { path: 'genres', component: GenresPageComponent },
             { path: 'help', component: HelpPageComponent },
             { path: '**', redirectTo: 'home' },
         ],

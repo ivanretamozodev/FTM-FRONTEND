@@ -1,4 +1,4 @@
-import { AllMovies } from './../../../interfaces/movies.interface';
+import { MovieSoftDetail } from './../../../interfaces/movies.interface';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-    @Input() movie!: AllMovies | null;
+    @Input() movie!: MovieSoftDetail | null;
     constructor() {}
 }
