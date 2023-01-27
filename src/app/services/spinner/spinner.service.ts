@@ -5,7 +5,7 @@ import { Subject, BehaviorSubject } from 'rxjs';
     providedIn: 'root',
 })
 export class SpinnerService {
-    isLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+    isLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     showSpinner(): void {
         this.isLoading$.next(true);

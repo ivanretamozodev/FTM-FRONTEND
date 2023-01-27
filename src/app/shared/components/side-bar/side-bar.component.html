@@ -1,56 +1,14 @@
-<!-- <nav class="sidebar">
-  <div class="sidebar__logo">
-    <h5>FreeTorrentMovies</h5>
-  </div>
-  <div class="step-separator"></div>
-  <div class="sidebar__links">
-    <a routerLink="/home"><i class="bi bi-house"></i> Inicio</a>
-    <a routerLink="/home"><i class="bi bi-film"></i>Peliculas</a>
-    <a routerLink="/home"><i class="bi bi-collection"></i>Categorías</a>
-    <a routerLink="/help"><i class="bi bi-question-square"></i>Ayuda</a>
-  </div>
-  <div class="step-separator"></div>
-  <div class="sidebar__links-register">
-    <a routerLink="/auth/login"
-      ><i class="bi bi-box-arrow-in-right"></i>Iniciar sesion</a
-    >
-    <a routerLink="/auth/register"
-      ><i class="bi bi-box-arrow-in-right"></i>Registrarse</a
-    >
-  </div>
-  <div class="step-separator"></div>
-</nav>
- -->
-
 <nav class="nav">
-    <div class="nav__item">
-        <a routerLink="">
-            <i class="bi bi-house"></i>
-            <span class="nav__item-title active">Inicio</span>
-        </a>
-    </div>
-    <div class="nav__item">
-        <a routerLink="/movies">
-            <i class="bi bi-film"></i>
-            <span class="nav__item-title active">Películas</span>
-        </a>
-    </div>
-    <div class="nav__item">
-        <a routerLink="/genres">
-            <i class="bi bi-collection"></i>
-            <span class="nav__item-title active">Géneros</span>
-        </a>
-    </div>
-    <div class="nav__item">
-        <a routerLink="/help">
-            <i class="bi bi-question-square"></i>
-            <span class="nav__item-title active">Ayuda</span>
+    <div class="nav__item" *ngFor="let item of navbarItems">
+        <a [routerLink]="item.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <i [ngClass]="item.icon"></i>
+            <span class="nav__item-title">{{ item.name }}</span>
         </a>
     </div>
     <div class="nav__item" *ngIf="feature">
-        <a routerLink="/uploads">
+        <a routerLink="/uploads" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
             <i class="bi bi-cloud-arrow-up"></i>
-            <span class="nav__item-title active">Subir</span>
+            <span class="nav__item-title">Subir</span>
         </a>
     </div>
 </nav>
