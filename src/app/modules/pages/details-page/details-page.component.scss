@@ -5,6 +5,7 @@
     flex-direction: column;
     margin: 1rem;
     margin-bottom: 5rem;
+    padding: 1rem;
     .download{
         background-color: $black-color;
         padding: 1rem;
@@ -12,7 +13,7 @@
         background-color: $grey-color;
         &__image{
             display: block;
-            width: 300px;
+            width: 18rem;
             margin: 0 auto;
             border-radius: $border-radius;
         }

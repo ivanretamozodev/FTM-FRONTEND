@@ -12,7 +12,7 @@ export class PaginatorService {
     movies$: BehaviorSubject<MovieSoftDetail[]> = new BehaviorSubject<MovieSoftDetail[]>([]);
     currentPage$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
     totalPage$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-    limit: number = 3;
+    limit: number = 14;
 
     constructor(private http: HttpClient) {}
     /*

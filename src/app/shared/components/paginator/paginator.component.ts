@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { PaginatorService } from '@services/paginator/paginator.service';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-paginator',
@@ -8,14 +8,15 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./paginator.component.scss'],
 })
 export class PaginatorComponent {
-    constructor(private paginator: PaginatorService) {}
+    currentPage$: Observable<number> = this._paginatorService.currentPage$;
+    totalpage$: Observable<number> = this._paginatorService.totalPage$;
 
-    currentPage$: Observable<number> = this.paginator.currentPage$;
-    totalpage$: Observable<number> = this.paginator.totalPage$;
+    constructor(private _paginatorService: PaginatorService) {}
+
     nextPage() {
-        this.paginator.nextPage();
+        this._paginatorService.nextPage();
     }
     previousPage() {
-        this.paginator.previusPage();
+        this._paginatorService.previusPage();
     }
 }

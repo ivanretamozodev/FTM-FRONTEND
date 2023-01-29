@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { FeaturedCardComponent } from './components/featured-card/featured-card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
+import { MaxCharactersPipe } from './pipes/max-characters.pipe';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
         FeaturedCardComponent,
         SpinnerComponent,
         PaginatorComponent,
+        MaxCharactersPipe,
     ],
     imports: [CommonModule, RouterModule],
     exports: [
