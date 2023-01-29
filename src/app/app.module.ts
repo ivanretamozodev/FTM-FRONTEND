@@ -1,3 +1,4 @@
+import { TokenInterceptor } from './interceptors/token/token.interceptor';
 import { SpinnerInterceptor } from './interceptors/spinner/spinner.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,7 +11,10 @@ import { SharedModule } from './shared/shared.module';
 @NgModule({
     declarations: [AppComponent],
     imports: [BrowserModule, HttpClientModule, AppRoutingModule, SharedModule],
-    providers: [{ provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true }],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
