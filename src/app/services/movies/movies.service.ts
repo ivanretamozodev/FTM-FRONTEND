@@ -1,8 +1,8 @@
-import { MovieResponse, MovieDetailResponse, MovieFeaturedResponse } from './../../interfaces/movies.interface';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { MovieResponse, MovieDetailResponse, MovieFeaturedResponse } from '@interfaces/movies.interface';
 
 @Injectable({
     providedIn: 'root',
@@ -12,8 +12,10 @@ export class MoviesService {
 
     constructor(private http: HttpClient) {}
 
-    getMovies = () => {
-        return this.http.get<MovieResponse>(`${this.baseUrl}/movies`).pipe(map((data) => data.movies));
+    getMovies = (page: number = 1, limit: number = 10) => {
+        return this.http
+            .get<MovieResponse>(`${this.baseUrl}/movies?page=${page}&limit=${limit}`)
+            .pipe(map((data) => data.movies));
     };
 
     getMoviesDetails = (id: string) => {

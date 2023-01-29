@@ -1,9 +1,8 @@
-import { SpinnerService } from './../../../services/spinner/spinner.service';
-import { MovieFeatured, MovieSoftDetail } from './../../../interfaces/movies.interface';
-import { MoviesService } from './../../../services/movies/movies.service';
 import { Component, OnInit } from '@angular/core';
-import SwiperCore, { Autoplay, Pagination, SwiperOptions } from 'swiper';
 import { ViewEncapsulation } from '@angular/core';
+import SwiperCore, { Autoplay, Pagination, SwiperOptions } from 'swiper';
+import { MovieFeatured, MovieSoftDetail } from '@interfaces/movies.interface';
+import { MoviesService } from '@services/movies/movies.service';
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -14,8 +13,7 @@ SwiperCore.use([Autoplay, Pagination]);
     encapsulation: ViewEncapsulation.None,
 })
 export class HomePageComponent implements OnInit {
-    constructor(private _moviesService: MoviesService, private _spinnerService: SpinnerService) {}
-    isLoading$ = this._spinnerService.isLoading$;
+    constructor(private _moviesService: MoviesService) {}
     movies: MovieSoftDetail[] = [];
     featuredMovies: MovieFeatured[] = [];
 
