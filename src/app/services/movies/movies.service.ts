@@ -12,10 +12,8 @@ export class MoviesService {
 
     constructor(private http: HttpClient) {}
 
-    getMovies = (page: number = 1, limit: number = 10) => {
-        return this.http
-            .get<MovieResponse>(`${this.baseUrl}/movies?page=${page}&limit=${limit}`)
-            .pipe(map((data) => data.movies));
+    getMovies = (limit: number = 10) => {
+        return this.http.get<MovieResponse>(`${this.baseUrl}/movies?limit=${limit}`).pipe(map((data) => data.movies));
     };
 
     getMoviesDetails = (id: string) => {

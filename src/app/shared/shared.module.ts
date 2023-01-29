@@ -7,6 +7,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { RouterModule } from '@angular/router';
 import { FeaturedCardComponent } from './components/featured-card/featured-card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
         SearchBarComponent,
         FeaturedCardComponent,
         SpinnerComponent,
+        PaginatorComponent,
     ],
     imports: [CommonModule, RouterModule],
     exports: [
@@ -25,6 +27,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
         SearchBarComponent,
         FeaturedCardComponent,
         SpinnerComponent,
+        PaginatorComponent,
     ],
 })
 export class SharedModule {}

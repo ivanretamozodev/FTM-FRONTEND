@@ -1,5 +1,6 @@
 <div class="container">
-    <div *ngFor="let movie of movies">
+    <div *ngFor="let movie of movies$ | async">
         <app-card [movie]="movie"></app-card>
     </div>
 </div>
+<app-paginator></app-paginator>

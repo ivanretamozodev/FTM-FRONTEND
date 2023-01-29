@@ -21,7 +21,8 @@ export interface MovieFeatured {
 }
 export interface MovieResponse {
     success: boolean;
-    length: number;
+    currentPage: number;
+    totalPages: number;
     movies: MovieSoftDetail[];
 }
 export interface MovieDetailResponse {

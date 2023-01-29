@@ -1,0 +1,26 @@
+@import "/src/styles/variables";
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+    gap: 1rem;
+  
+    .page-button {
+        background-color: $grey-color;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+        padding: 0.25rem 0.5rem;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+        &:hover{
+            cursor: pointer;
+            background-color: $primary-color;
+            color: $white-color;
+        }
+    }
+    .current-page {
+        font-weight: bold;
+    }
+}
