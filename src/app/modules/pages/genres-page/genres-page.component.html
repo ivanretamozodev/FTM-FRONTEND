@@ -1,1 +1,5 @@
-<p>genres-page works!</p>
+<div class="button-container">
+    <ng-container *ngFor="let genre of genres">
+        <button>{{ genre.name }}</button>
+    </ng-container>
+</div>

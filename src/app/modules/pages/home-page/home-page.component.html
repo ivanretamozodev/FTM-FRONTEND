@@ -9,7 +9,7 @@
         </swiper>
     </section>
     <section class="container">
-        <h2>Mejor Valoradas</h2>
+        <h2>Destacádas</h2>
         <swiper [config]="configFeatures" class="mySwiper">
             <ng-template class="container" *ngFor="let movie of featuredMovies" swiperSlide>
                 <app-featured-card [movieFeatured]="movie"></app-featured-card>
@@ -25,9 +25,9 @@
         </swiper>
     </section>
     <section class="container">
-        <h2>Estrenos</h2>
+        <h2>Mejor Valoradas</h2>
         <swiper [config]="configFeatures" class="mySwiper">
-            <ng-template class="container" *ngFor="let movie of featuredMovies" swiperSlide>
+            <ng-template class="container" *ngFor="let movie of valoratedMovies" swiperSlide>
                 <app-featured-card [movieFeatured]="movie"></app-featured-card>
             </ng-template>
         </swiper>

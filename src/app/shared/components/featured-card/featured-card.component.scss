@@ -8,10 +8,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    
     img{
         width: 100%;
         max-width: 11.25rem;
         flex: 1;
+    }
+    &__rating{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        i{
+            color: $primary-color;
+        }
+        small{
+            font-size: small;
+        }
     }
     &__text{
         padding: 1rem;
@@ -46,3 +62,4 @@
     
 
 }
+

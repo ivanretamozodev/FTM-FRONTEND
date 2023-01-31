@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [ngClass]="{ gold: movie?.featured == true }">
     <a [routerLink]="['/download', movie?._id]">
         <img [src]="movie?.posterImage" alt="" />
     </a>

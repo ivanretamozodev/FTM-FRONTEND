@@ -1,11 +1,12 @@
-<div *ngIf="movieFeatured" class="featured">
+<div *ngIf="movieFeatured" class="featured" [ngClass]="{ gold: movieFeatured.featured == true }">
     <img [src]="movieFeatured.posterImage" alt="" />
-
+    <div class="featured__rating">
+        <small>{{ movieFeatured.rating }}/10</small>
+        <i class="bi bi-star-fill"></i>
+    </div>
     <div class="featured__text">
         <h2 class="title">{{ movieFeatured.name }}</h2>
-        <p>
-            {{ movieFeatured.description | maxCharacters }}
-        </p>
+        <p>{{ movieFeatured.description | maxCharacters }}</p>
         <button [routerLink]="['/download', movieFeatured._id]">Ver Detalles</button>
     </div>
 </div>

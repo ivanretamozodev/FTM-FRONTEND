@@ -18,6 +18,8 @@ export interface MovieFeatured {
     name: string;
     posterImage: string;
     description: string;
+    rating: number;
+    featured: boolean;
 }
 export interface MovieResponse {
     success: boolean;
@@ -37,4 +39,5 @@ export interface MovieFeaturedResponse {
 export interface MovieSoftDetail {
     _id: string;
     posterImage: string;
+    featured: boolean;
 }

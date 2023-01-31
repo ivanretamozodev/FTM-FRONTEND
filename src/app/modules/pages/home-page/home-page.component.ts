@@ -16,10 +16,12 @@ export class HomePageComponent implements OnInit {
     constructor(private _moviesService: MoviesService) {}
     movies: MovieSoftDetail[] = [];
     featuredMovies: MovieFeatured[] = [];
+    valoratedMovies: MovieFeatured[] = [];
 
     ngOnInit(): void {
         this._moviesService.getMovies().subscribe((resp) => (this.movies = resp));
         this._moviesService.getFeaturedMovies().subscribe((resp) => (this.featuredMovies = resp));
+        this._moviesService.getValoratedMovies().subscribe((resp) => (this.valoratedMovies = resp));
     }
 
     config: SwiperOptions = {
@@ -85,5 +87,6 @@ export class HomePageComponent implements OnInit {
             },
         },
         pagination: { clickable: true },
+        autoplay: true,
     };
 }

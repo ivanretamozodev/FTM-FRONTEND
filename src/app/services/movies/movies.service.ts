@@ -15,6 +15,11 @@ export class MoviesService {
     getMovies = (limit: number = 10) => {
         return this.http.get<MovieResponse>(`${this.baseUrl}/movies?limit=${limit}`).pipe(map((data) => data.movies));
     };
+    getValoratedMovies = (limit: number = 10) => {
+        return this.http
+            .get<MovieFeaturedResponse>(`${this.baseUrl}/movies/valorated?limit=${limit}`)
+            .pipe(map((data) => data.results));
+    };
 
     getMoviesDetails = (id: string) => {
         return this.http.get<MovieDetailResponse>(`${this.baseUrl}/movies/${id}`).pipe(map((data) => data.results));
