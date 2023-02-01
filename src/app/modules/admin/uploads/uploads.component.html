@@ -1,37 +1,55 @@
 <div class="container">
-    <form action="">
-        <div class="first-section">
-            <div class="name">
-                <label for="name">Nombre </label>
-                <input type="text" placeholder="name" />
-                <label for="year">Año</label>
-                <input type="text" placeholder="year" />
-            </div>
-            <div class="rating">
-                <label for="rating">Rating</label>
-                <input id="rating" type="number" placeholder="rating" min="0" max="10" />
-                <label for="trailer">Trailer</label>
-                <input id="trailer" type="text" placeholder="trailer" />
-                <label for="cars">Choose a car:</label>
-
-                <select name="genres" id="genres">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+    <form (ngSubmit)="uploadMovie()" [formGroup]="movieForm">
+        <div>
+            <input formControlName="name" placeholder="Nombre" type="text" class="input" required="" />
+            <input formControlName="year" placeholder="Año" type="text" class="input" required="" />
+            <input formControlName="rating" placeholder="Rating" type="number" class="input" required="" />
+        </div>
+        <div class="img-url">
+            <input
+                formControlName="posterImage"
+                placeholder="Imagen Url"
+                type="text"
+                class="input width-max"
+                required=""
+            />
+            <input formControlName="link" placeholder="link" type="text" class="input width-max" required="" />
+            <input formControlName="link4k" placeholder="link en 4k" type="text" class="input width-max" required="" />
+        </div>
+        <div>
+            <h3>Descripción</h3>
+            <textarea formControlName="description" name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <label for="standard-select">Generos</label>
+            <div class="select">
+                <select
+                    name="genreSelected"
+                    [(ngModel)]="genreSelected"
+                    [ngModelOptions]="{ standalone: true }"
+                    (change)="changes($event)"
+                >
+                    <ng-container *ngFor="let genre of genres">
+                        <option [value]="[genre._id, genre.name]">
+                            {{ genre.name }}
+                        </option>
+                    </ng-container>
                 </select>
             </div>
-        </div>
-        <div class="second-section">
-            <div class="image">
-                <label for="">Subir Imagen</label>
-                <input type="file" id="myFile" placeholder="Subir Imagen" />
-                <label for="featured">Es destacada?</label>
-                <input id="featured" type="checkbox" placeholder="is featured" />
+            <div>
+                <h3>Generos seleccionados</h3>
+                <div class="genres">
+                    <p class="genres-selected" *ngFor="let genre of genreSelectedName">{{ genre }}</p>
+                </div>
             </div>
+
+            <h3>
+                destacada?
+                <input formControlName="featured" type="checkbox" name="" id="" />
+            </h3>
         </div>
-        <label for="description">Descripcion</label>
-        <textarea id="description" name="descripcion" id="" cols="30" rows="10" placeholder="descripcion..."></textarea>
+        <div class="button-container">
+            <button type="submit">Cargar Pelicula</button>
+        </div>
     </form>
-    <app-featured-card></app-featured-card>
 </div>

@@ -1,4 +1,5 @@
-<div class="container">
+<app-search [genres]="genres"></app-search>
+<div class="movies-container">
     <div *ngFor="let movie of movies$ | async">
         <app-card [movie]="movie"></app-card>
     </div>

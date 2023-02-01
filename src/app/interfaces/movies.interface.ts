@@ -1,7 +1,5 @@
-export interface Genre {
-    id: string;
-    name: string;
-}
+import { Genre } from './genre.interface';
+
 export interface Movie {
     name: string;
     year: string;
@@ -12,6 +10,7 @@ export interface Movie {
     trailer: string;
     featured: boolean;
     link: string;
+    link4k: string;
 }
 export interface MovieFeatured {
     _id: string;

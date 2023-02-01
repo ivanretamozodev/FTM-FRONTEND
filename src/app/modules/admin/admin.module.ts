@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AdminRoutingModule } from './admin-routing.module';
@@ -8,6 +8,6 @@ import { UploadsComponent } from './uploads/uploads.component';
 
 @NgModule({
     declarations: [UploadsComponent],
-    imports: [CommonModule, SharedModule, AdminRoutingModule, ReactiveFormsModule],
+    imports: [CommonModule, SharedModule, AdminRoutingModule, FormsModule, ReactiveFormsModule],
 })
 export class AdminModule {}

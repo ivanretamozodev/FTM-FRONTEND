@@ -1,5 +1,5 @@
 <div *ngIf="movieFeatured" class="featured" [ngClass]="{ gold: movieFeatured.featured == true }">
-    <img [src]="movieFeatured.posterImage" alt="" />
+    <img [src]="movieFeatured.posterImage" [alt]="movieFeatured.name" />
     <div class="featured__rating">
         <small>{{ movieFeatured.rating }}/10</small>
         <i class="bi bi-star-fill"></i>

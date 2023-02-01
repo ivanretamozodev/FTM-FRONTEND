@@ -10,6 +10,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HelpPageComponent } from './help-page/help-page.component';
 import { MoviesPageComponent } from './movies-page/movies-page.component';
 import { GenresPageComponent } from './genres-page/genres-page.component';
+import { SearchComponent } from './movies-page/components/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -18,7 +20,8 @@ import { GenresPageComponent } from './genres-page/genres-page.component';
         HelpPageComponent,
         MoviesPageComponent,
         GenresPageComponent,
+        SearchComponent,
     ],
-    imports: [CommonModule, PagesRoutingModule, SharedModule, SwiperModule],
+    imports: [CommonModule, PagesRoutingModule, SharedModule, SwiperModule, FormsModule],
 })
 export class PagesModule {}

@@ -1,4 +1,4 @@
-import { Genre } from './../../../interfaces/movies.interface';
+import { Genre } from '@interfaces/genre.interface';
 import { GenreService } from '@services/genre/genre.service';
 import { Component, OnInit } from '@angular/core';
 

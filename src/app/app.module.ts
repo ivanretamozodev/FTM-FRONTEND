@@ -12,8 +12,8 @@ import { SharedModule } from './shared/shared.module';
     declarations: [AppComponent],
     imports: [BrowserModule, HttpClientModule, AppRoutingModule, SharedModule],
     providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
     ],
     bootstrap: [AppComponent],
 })

@@ -19,7 +19,19 @@ export class PaginatorService {
      * la funcion llama a el endpoint y le pasamos la pagina y el limite,esta retornara un observable de tipo MovieResponse,en el cual
      *con el operador map llenamos los observables con los datos en el cual usaremos con la suscripcion tanto en el componente moviesComponent y el paginatorComponent
      */
-    getAllMoviesPaginated(page: number | Observable<number>, limit: number) {
+    getAllMoviesPaginated(page: number | Observable<number>, limit: number, genre?: string) {
+        if (genre) {
+            page = 1;
+            return this.http
+                .get<MovieResponse>(`${this.baseUrl}/movies/genres?page=${page}&genre=${genre}&limit=${limit}`)
+                .pipe(
+                    map((movieRes: MovieResponse) => {
+                        this.movies$.next(movieRes.movies);
+                        this.currentPage$.next(movieRes.currentPage);
+                        this.totalPage$.next(movieRes.totalPages);
+                    })
+                );
+        }
         return this.http.get<MovieResponse>(`${this.baseUrl}/movies?page=${page}&limit=${limit}`).pipe(
             map((movieRes: MovieResponse) => {
                 this.movies$.next(movieRes.movies);
