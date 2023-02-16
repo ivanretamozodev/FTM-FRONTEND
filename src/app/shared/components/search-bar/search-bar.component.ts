@@ -1,19 +1,19 @@
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { AuthService } from './../../../modules/auth/services/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-search-bar',
-    templateUrl: './search-bar.component.html',
-    styleUrls: ['./search-bar.component.scss'],
+  selector: 'app-search-bar',
+  templateUrl: './search-bar.component.html',
+  styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent {
-    loggedIn: boolean = false;
+  loggedIn: boolean = false;
 
-    constructor(private authService: AuthService) {
-        this.authService.loggedIn$.subscribe((value) => (this.loggedIn = value));
-    }
+  constructor(private authService: AuthService) {
+    this.authService.loggedIn$.subscribe((value) => (this.loggedIn = value));
+  }
 
-    logOut() {
-        this.authService.logOut();
-    }
+  logOut() {
+    this.authService.logOut();
+  }
 }

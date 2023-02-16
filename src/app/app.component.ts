@@ -1,19 +1,14 @@
-import { ChangeDetectorRef, Component, AfterViewInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { SpinnerService } from '@services/spinner/spinner.service';
+import { ChangeDetectorRef, Component, AfterContentChecked } from '@angular/core';
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterViewInit {
-    isLoading$!: Observable<boolean>;
-    constructor(private _spinnerService: SpinnerService, private _cd: ChangeDetectorRef) {
-        this.isLoading$ = this._spinnerService.isLoading$;
-    }
-
-    ngAfterViewInit(): void {
-        this._cd.detectChanges();
-    }
+export class AppComponent implements AfterContentChecked {
+  constructor(public _spinnerService: SpinnerService, private cd: ChangeDetectorRef) {}
+  ngAfterContentChecked(): void {
+    this.cd.detectChanges();
+  }
 }

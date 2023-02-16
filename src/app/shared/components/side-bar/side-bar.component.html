@@ -1,14 +1,14 @@
 <nav class="nav">
-    <div class="nav__item" *ngFor="let item of navbarItems">
-        <a [routerLink]="item.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-            <i [ngClass]="item.icon"></i>
-            <span class="nav__item-title">{{ item.name }}</span>
-        </a>
-    </div>
-    <div class="nav__item" *ngIf="feature">
-        <a routerLink="/uploads" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-            <i class="bi bi-cloud-arrow-up"></i>
-            <span class="nav__item-title">Subir</span>
-        </a>
-    </div>
+  <div class="nav__item" *ngFor="let item of navbarItems">
+    <a [routerLink]="item.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i [ngClass]="item.icon"></i>
+      <span class="nav__item-title">{{ item.name }}</span>
+    </a>
+  </div>
+  <div class="nav__item" *ngIf="feature">
+    <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i class="bi bi-cloud-arrow-up"></i>
+      <span class="nav__item-title">Subir</span>
+    </a>
+  </div>
 </nav>

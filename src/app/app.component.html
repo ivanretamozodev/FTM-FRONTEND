@@ -1,8 +1,8 @@
-<app-spinner *ngIf="isLoading$ | async"></app-spinner>
+<app-spinner *ngIf="_spinnerService.isLoading$ | async"></app-spinner>
 <app-search-bar></app-search-bar>
 <app-side-bar></app-side-bar>
 <div class="container">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
 
 <app-featured-card></app-featured-card>

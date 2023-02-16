@@ -1,0 +1,8 @@
+<section class="container">
+  <h2>{{ title }}</h2>
+  <swiper [config]="configFeatures" class="mySwiper">
+    <ng-template class="container" *ngFor="let movie of featuredMovies" swiperSlide>
+      <app-featured-card [movieFeatured]="movie"></app-featured-card>
+    </ng-template>
+  </swiper>
+</section>

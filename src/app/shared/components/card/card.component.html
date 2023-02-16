@@ -1,5 +1,6 @@
 <div class="card" [ngClass]="{ gold: movie?.featured == true }">
-    <a [routerLink]="['/download', movie?._id]">
-        <img [src]="movie?.posterImage" alt="" />
-    </a>
+  <a [routerLink]="['/movie', movie?._id]">
+    <img [src]="movie?.posterImage" alt="" />
+    <h5 *ngIf="movie?.link4k" class="card__4k">4k</h5>
+  </a>
 </div>
