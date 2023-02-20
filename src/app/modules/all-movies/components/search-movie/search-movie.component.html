@@ -1,11 +1,12 @@
 <div class="search-container">
-  <div>
-    <input placeholder="Buscar Pelicula" type="text" class="input" required="" />
+  <div class="search__input">
+    <input placeholder="Buscar Pelicula" (keyup)="src()" [(ngModel)]="term" type="text" class="input" required="" />
+    {{ term }}
   </div>
-  <div>
+  <div class="search__genres">
     <label for="standard-select">Generos</label>
     <div class="select">
-      <select name="genreSelected" [(ngModel)]="genreSelected">
+      <select name="genreSelected" (change)="eventGenre()" [(ngModel)]="genreSelected">
         <ng-container *ngFor="let genre of genres">
           <option [value]="genre._id">
             {{ genre.name }}

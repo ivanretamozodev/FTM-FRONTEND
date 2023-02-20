@@ -5,16 +5,19 @@ import { SwiperOptions } from 'swiper';
 @Component({
   selector: 'app-featured-slider',
   templateUrl: './featured-slider.component.html',
-  styleUrls: ['./featured-slider.component.scss'],
 })
 export class FeaturedSliderComponent {
   @Input() featuredMovies: MovieFeatured[] = [];
   @Input() title: string = '';
   configFeatures: SwiperOptions = {
-    slidesPerView: 0.79,
+    slidesPerView: 0.83,
     spaceBetween: 5,
     navigation: true,
     breakpoints: {
+      '425': {
+        slidesPerView: 0.92,
+        spaceBetween: 20,
+      },
       '540': {
         slidesPerView: 1.2,
         spaceBetween: 20,
@@ -24,7 +27,7 @@ export class FeaturedSliderComponent {
         spaceBetween: 20,
       },
       '768': {
-        slidesPerView: 1.7,
+        slidesPerView: 1.4,
         spaceBetween: 20,
       },
       '992': {

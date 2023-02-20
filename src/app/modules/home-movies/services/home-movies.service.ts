@@ -4,11 +4,9 @@ import { Injectable } from '@angular/core';
 import { map, Observable, pipe } from 'rxjs';
 import { MovieResponse, MovieDetailResponse, MovieFeaturedResponse } from 'src/app/core/interfaces/movies.interface';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class HomeMoviesService {
-  baseUrl: string = environment.baseUrl;
+  private readonly baseUrl: string = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 

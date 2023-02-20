@@ -49,8 +49,10 @@ export class UploadsComponent implements OnInit {
   }
 
   uploadMovie() {
-    const { name, year, genres, rating, posterImage, description, featured, link } = this.movieForm.value;
-    this._adminService.uploadMovie(name, year, genres, rating, posterImage, description, featured, link).subscribe();
+    const { name, year, genres, rating, posterImage, description, featured, link, link4k } = this.movieForm.value;
+    this._adminService
+      .uploadMovie(name, year, genres, rating, posterImage, description, featured, link, link4k)
+      .subscribe();
     this.genreSelected = '';
     this.genreSelectedName = [];
     this.genreSelectedIDArray = [];

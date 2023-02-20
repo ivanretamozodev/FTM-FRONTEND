@@ -3,17 +3,16 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 1rem;
     margin-bottom: 5rem;
     padding: 1rem;
     .download{
         background-color: $black-color;
-        padding: 1rem;
+        padding: 0.5rem;
         margin: 0 auto;
         background-color: $grey-color;
         &__image{
             display: block;
-            width: 18rem;
+            width: 20rem;
             margin: 0 auto;
             border-radius: $border-radius;
         }
@@ -22,6 +21,7 @@
             h3{
                 font-size: 1.5rem;
                 text-align: center;
+                margin: 1.5rem 0rem;
             }
             &-info{
                 margin-top: 0.5rem;
@@ -35,6 +35,17 @@
                     }
                 }
             }
+            &-genres{
+             margin-top: 1.5rem;
+              display: flex;
+              justify-content: center;
+              flex-wrap: wrap;
+              gap:0.3rem;
+              span{
+                padding: 0.3rem;
+                border: 1px solid $primary-color;
+              }
+            }
         }
         &__about{
             margin-top: 0.5rem;
@@ -46,14 +57,17 @@
             }
         }
         &__button{
-            margin-top: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1.5rem 0rem;
             button{
-                width: 100%;
                 border: none;
                 border-radius: $border-radius;
                 background-color: $primary-color;
                 color: $white-color;
-                padding: 1rem;
+                padding: 0.3rem;
                 font-size: 1.1rem;
                 transition: background-color 0.3s ease;
                 &:hover{
@@ -73,34 +87,12 @@
     .container{
        .download{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        &__image{
-            display: block;
-            width: 300px;
-            margin: 0 auto;
-            border-radius: $border-radius;
-        }
-        &__description{
-            margin-top: 1.5rem;
-            h3{
-                font-size: 2.5rem;
-                text-align: center;
-                margin: 1rem;
-            }
-            &-info{
-                margin-top: 1.5rem;
-                display: flex;
-                justify-content: center;
-                gap: 2rem;
-                p{
-                    font-size: 1.1rem;
-                }
-            }
-        }
+
+      
+      
         &__about{
             margin-top: 1.5rem;
-            max-width: 35rem;
+            max-width: 60rem;
             p{
                 font-size: 1.1rem;
                 text-align: center;
@@ -109,26 +101,13 @@
             }
         }
         &__button{
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: center;
+           
             button{
-                width: 50%;
-                height: 65px;
-                border: none;
-                border-radius: $border-radius;
-                background-color: $primary-color;
-                color: $white-color;
-                padding: 1rem;
-                font-size: 1.1rem;
-                transition: background-color 0.3s ease;
-                &:hover{
-                    cursor: pointer;
-                    cursor: pointer;
-                    background-color: $grey-color;
-                    color: $primary-color;
-                    border: 1px solid $primary-color;
-                }
+           
+                font-size: 1.3rem;
+                padding: 0.3rem;
+               
+            
             }
         }
        }

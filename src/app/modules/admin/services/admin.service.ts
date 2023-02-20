@@ -20,7 +20,8 @@ export class AdminService {
     posterImage: string,
     description: string,
     featured: boolean,
-    link: string
+    link: string,
+    link4k: string
   ) {
     const body = { name, year, genres, rating, posterImage, description, featured, link };
     return this._httpClient.post(`${this.baseUrl}/movies`, body);

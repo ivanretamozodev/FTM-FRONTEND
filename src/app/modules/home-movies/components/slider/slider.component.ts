@@ -6,7 +6,6 @@ import { SwiperOptions } from 'swiper';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss'],
 })
 export class SliderComponent {
   @Input() movies: MovieSoftDetail[] = [];

@@ -1,4 +1,4 @@
-<div *ngIf="movie" class="container">
+<div *ngIf="movie" class="container animate__animated animate__fadeIn">
   <section class="download">
     <img class="download__image" [src]="movie.posterImage" alt="" />
     <div>
@@ -6,11 +6,15 @@
         <h3>{{ movie.name }}</h3>
         <div class="download__description-info">
           <p>
-            rating: <span>{{ movie.rating }}/10</span>
+            Rating: <span>{{ movie.rating }}/10</span>
           </p>
           <p>
-            año: <span>{{ movie.year }}</span>
+            Año: <span>{{ movie.year }}</span>
           </p>
+        </div>
+
+        <div class="download__description-genres">
+          <span *ngFor="let genre of movie.genres">{{ genre.name }}</span>
         </div>
       </div>
       <div class="download__about">
@@ -19,7 +23,9 @@
         </p>
       </div>
       <div class="download__button">
+        <button (click)="goBack()">volver</button>
         <button (click)="toDownload()">Descargar</button>
+        <button *ngIf="movie.link4k" (click)="toDownload()">Descargar 4k</button>
       </div>
     </div>
   </section>
