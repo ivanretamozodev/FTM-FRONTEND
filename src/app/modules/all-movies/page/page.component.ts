@@ -57,7 +57,7 @@ export class PageComponent implements OnInit, OnDestroy {
   }
 
   onSelectedGenre(genre: string): void {
-    this._movieService.getMovies(this.currentPage, 14, genre).subscribe((data) => {
+    this._movieService.getMovies(1, 14, genre).subscribe((data) => {
       this.genreSelected = genre;
       this.currentPage = data.currentPage;
       this.totalPages = data.totalPages;
@@ -79,7 +79,7 @@ export class PageComponent implements OnInit, OnDestroy {
   }
 
   onPreviusPage(): void {
-    if (this.currentPage < this.totalPages) {
+    if (this.currentPage < 1) {
       return;
     }
     this.currentPage--;
