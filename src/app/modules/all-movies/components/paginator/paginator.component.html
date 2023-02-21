@@ -1,7 +1,7 @@
 <div class="paginator">
   <div class="paginator__btns">
-    <button>Anterior</button>
+    <button (click)="previusPage()">Anterior</button>
     <p>pagina {{ currentPage }}/{{ totalPages }}</p>
-    <button>Siguiente</button>
+    <button (click)="nextPage()">Siguiente</button>
   </div>
 </div>

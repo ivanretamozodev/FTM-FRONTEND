@@ -3,8 +3,14 @@
   (selectedGenre)="onSelectedGenre($event)"
   [genres]="genres"
 ></app-search-movie>
+<h3 *ngIf="showGenre">Peliculas con genero: {{ genreName }}</h3>
 <div class="movies-container">
   <app-card *ngFor="let movie of movies" [movie]="movie"></app-card>
 </div>
 
-<app-paginator [currentPage]="currentPage" [totalPages]="totalPages"></app-paginator>
+<app-paginator
+  (nextPageClick)="onNextPage()"
+  (previusPageClick)="onPreviusPage()"
+  [currentPage]="currentPage"
+  [totalPages]="totalPages"
+></app-paginator>

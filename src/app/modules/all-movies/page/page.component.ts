@@ -14,15 +14,24 @@ export class PageComponent implements OnInit, OnDestroy {
   movies: MovieSoftDetail[] = [];
   currentPage: number = 1;
   totalPages: number = 1;
+  limit = 14;
+  genreSelected: string = '';
+  genreName: string = '';
+  showGenre: boolean = false;
   listObservables$: Subscription[] | undefined;
   constructor(private _movieService: AllMoviesService) {}
   ngOnInit(): void {
-    this.getMovies();
+    this.getMovies(this.currentPage, this.limit);
     this.getGenres();
   }
 
-  getMovies() {
-    const observer1$: Subscription = this._movieService.getMovies().subscribe((data) => {
+  /*
+   * Get movies sera llamado en el inicio del componente,la funcion se encarga de mostrar todas las peliculas asignando el total de peliculas
+   *la pagina la cual nos encontramos,guardando sus valores en sus respectivas variables
+   */
+
+  getMovies(page: number, limit: number, genre?: string): void {
+    const observer1$: Subscription = this._movieService.getMovies(page, limit, genre).subscribe((data) => {
       this.currentPage = data.currentPage;
       this.totalPages = data.totalPages;
       this.movies = data.movies;
@@ -30,21 +39,51 @@ export class PageComponent implements OnInit, OnDestroy {
     this.listObservables$ = [observer1$];
   }
 
-  getGenres() {
+  /*
+   * getGenres() se ocupa de consultar la lista de generos en la api y mostrarlos en su respectivo select en el dom,asi el usuario puede
+   *elegir el genero que asi lo desea
+   */
+
+  getGenres(): void {
     const observer2$: Subscription = this._movieService.getGenres().subscribe((genres) => (this.genres = genres));
     this.listObservables$?.push(observer2$);
   }
 
-  onSelectedGenre(genre: string) {
-    this._movieService.getMovies(this.currentPage, genre, 14).subscribe((data) => {
-      this.currentPage = data.currentPage;
-      this.totalPages = data.totalPages;
-      this.movies = data.movies;
+  getGenreName() {
+    this._movieService.getGenreById(this.genreSelected).subscribe((data) => {
+      this.showGenre = true;
+      this.genreName = data.name;
     });
   }
 
-  onSearch(term: string) {
+  onSelectedGenre(genre: string): void {
+    this._movieService.getMovies(this.currentPage, 14, genre).subscribe((data) => {
+      this.genreSelected = genre;
+      this.currentPage = data.currentPage;
+      this.totalPages = data.totalPages;
+      this.movies = data.movies;
+      this.getGenreName();
+    });
+  }
+
+  onSearch(term: string): void {
     console.log('desde el padre', term);
+  }
+
+  onNextPage(): void {
+    if (this.currentPage >= this.totalPages) {
+      return;
+    }
+    this.currentPage++;
+    this.getMovies(this.currentPage, this.limit, this.genreSelected);
+  }
+
+  onPreviusPage(): void {
+    if (this.currentPage < this.totalPages) {
+      return;
+    }
+    this.currentPage--;
+    this.getMovies(this.currentPage, this.limit, this.genreSelected);
   }
 
   ngOnDestroy(): void {

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { GenreResponse } from '@core/interfaces/genre.interface';
+import { Genre, GenreResponse } from '@core/interfaces/genre.interface';
 import { MovieResponse } from '@core/interfaces/movies.interface';
 
 @Injectable()
@@ -11,11 +11,15 @@ export class AllMoviesService {
 
   constructor(private _httpClient: HttpClient) {}
 
-  getMovies = (page: number = 1, genre?: string, limit: number = 14) => {
+  getMovies = (page: number = 1, limit: number = 14, genre?: string) => {
     return this._httpClient.get<MovieResponse>(
-      `${this.baseUrl}/movies${genre ? '/genres' : ''}?page=1&genre=${genre}&limit=${limit}`
+      `${this.baseUrl}/movies${genre ? '/genres' : ''}?page=${page}&genre=${genre}&limit=${limit}`
     );
   };
+
+  getGenreById(id: string) {
+    return this._httpClient.get<Genre>(`${this.baseUrl}/genres/${id}`);
+  }
 
   searchMovie() {}
 
