@@ -1,65 +1,52 @@
-@import "/src/styles/variables";
-.featured{
-    width: 25rem;
-    border-radius: $border-radius;
-    border: 1px solid $grey-color;
-    background-color: $grey-color;
-    padding: 0.1rem;
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
+.featured {
+  width: 23rem;
+  border-radius: $border-radius;
+  border: 1px solid $grey-color;
+  background-color: $grey-color;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  img {
+    width: 100%;
+    max-width: 9rem;
+    flex: 1;
+  }
+  &__rating {
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: relative;
-    
-    img{
-        width: 100%;
-        max-width: 11.25rem;
-        flex: 1;
+    gap: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    i {
+      color: $primary-color;
     }
-    &__rating{
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        i{
-            color: $primary-color;
-        }
-        small{
-            font-size: small;
-        }
+    small {
+      font-size: small;
     }
-    &__text{
-        padding: 1rem;
-        h2{
-            font-size: 1.1rem;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        p{
-            font-size: 0.9rem;
-            font-weight: lighter;
-            text-align: center;
-            line-height: 1.2;
-        }
-        button{
-            margin-top: 1.5rem;
-            width: 100%;
-            padding: 0.5rem;
-            border: none;
-            background-color: $primary-color;
-            color: $white-color;
-            border-radius: $border-radius;
-            outline: none;
-            transition: all 0.2 ease;
-            &:hover{
-                cursor: pointer;
-                opacity: 0.9;
-                transform: scale(1.01);
-            }
-        }
+  }
+  &__text {
+    padding: 1rem;
+    h2 {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 1rem;
     }
-    
-
+    p {
+      font-size: 0.9rem;
+      font-weight: lighter;
+      text-align: center;
+      line-height: 1.2;
+    }
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      @include primaryButton();
+    }
+  }
 }
-

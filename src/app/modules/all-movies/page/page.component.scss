@@ -1,8 +1,14 @@
-.movies-container{
+.movies-container {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .movies-container {
     margin-top: 1rem;
-    margin-bottom: 5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+  }
 }

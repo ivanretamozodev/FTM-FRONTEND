@@ -19,7 +19,9 @@ export class AllMoviesService {
 
   searchMovie() {}
 
-  getGenres() {
-    return this._httpClient.get<GenreResponse>(`${this.baseUrl}/genres`).pipe(map((data) => data.genres));
+  getGenres(limit: number = 14) {
+    return this._httpClient
+      .get<GenreResponse>(`${this.baseUrl}/genres?limit=${limit}`)
+      .pipe(map((data) => data.genres));
   }
 }

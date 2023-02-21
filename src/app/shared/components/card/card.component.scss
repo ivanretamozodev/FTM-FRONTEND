@@ -1,26 +1,28 @@
-@import "/src/styles/variables";
-.card{
-    width: 10rem;
-    background-color: $grey-color;
-    border: 1px solid $grey-color;
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
+.card {
+  width: 10rem;
+  background-color: $grey-color;
+  border: 1px solid $grey-color;
+  border-radius: $border-radius;
+  padding: 0.1rem;
+  transition: transform 0.2s ease;
+  position: relative;
+  @include transition-ease();
+  &:hover {
+    box-shadow: 8px 16px 38px -20px lighten($grey-color, 50%);
+  }
+  &__4k {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0rem;
     border-radius: $border-radius;
-    padding: 0.1rem;
-    transition: transform 0.2s ease;
-    position: relative;
-    &:hover{
-
+    background-color: $primary-color;
+    i {
+      font-size: 1.6rem;
+      color: $white-color;
+      text-align: center;
     }
-    &__4k{
-        position: absolute;
-        top: 0.5rem;
-        left: 0.5rem;
-        padding: 0rem;
-        border-radius: $border-radius;
-        background-color: $primary-color;
-        i{
-            font-size: 1.6rem;
-            color: $white-color;
-            text-align: center;
-        }
-    }
+  }
 }

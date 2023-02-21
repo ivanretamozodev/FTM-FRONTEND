@@ -1,0 +1,16 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
+
+.paginator {
+  &__btns {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 1rem;
+    button {
+      @include secButton();
+      padding: 0.5rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

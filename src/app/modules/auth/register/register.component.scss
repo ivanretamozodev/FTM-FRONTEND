@@ -1,58 +1,45 @@
-@import "/src/styles/variables";
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
 
-    .login-form{
-        display: flex;
-        width: 100%;
-        background-color: $grey-color;
-        border-radius: $border-radius;
-        flex-direction: column;
-        width: 320px;
-        margin: 0 auto;
-        justify-content: space-around;
-    align-items: center;
-    padding: 2rem;
-    h2{
-        font-size: 1.3rem;
+.login-form {
+  display: flex;
+  width: 100%;
+  background-color: $grey-color;
+  border-radius: $border-radius;
+  flex-direction: column;
+  width: 320px;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  h2 {
+    font-size: 1.3rem;
     text-align: center;
+  }
+  form {
+    input {
+      display: block;
+      padding: 1rem;
+      width: 220px;
+      margin: 1.5rem;
+      border-radius: $border-radius;
+    }
+    button {
+      @include secButton();
+      width: 100%;
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+    }
+    .error {
+      p {
+        color: red;
+      }
+    }
+  }
+  p {
+    a {
+      margin-top: 1rem;
+      color: $primary-color;
+    }
+  }
 }
-    form{
-
-    input{
-        display: block;
-        padding: 1rem;
-        width: 220px;
-        margin: 1.5rem;
-        border-radius: $border-radius;
-    }
-    button{
-        background-color: $primary-color;
-        color: $white-color;
-        padding: 1rem 1.25rem;
-        border: none;
-        font-size: 1rem;
-        border-radius: $border-radius;
-        transition: background-color 0.3s ease;
-        margin-bottom: 1rem;
-        width: 100%;
-        &:hover{
-            cursor: pointer;
-            background-color: $grey-color;
-            color: $primary-color;
-            border: 1px solid $primary-color;
-        }
-    }
-    .error{
-        p{
-            color: red;
-        }
-    }
-}
-    p{
-        a{
-            margin-top: 1rem;
-            color: $primary-color;
-        }
-    }
-    
-}
-

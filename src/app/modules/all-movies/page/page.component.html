@@ -6,3 +6,5 @@
 <div class="movies-container">
   <app-card *ngFor="let movie of movies" [movie]="movie"></app-card>
 </div>
+
+<app-paginator [currentPage]="currentPage" [totalPages]="totalPages"></app-paginator>

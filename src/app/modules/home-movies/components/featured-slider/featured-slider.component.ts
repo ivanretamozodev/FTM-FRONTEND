@@ -15,7 +15,7 @@ export class FeaturedSliderComponent {
     navigation: true,
     breakpoints: {
       '425': {
-        slidesPerView: 0.92,
+        slidesPerView: 0.98,
         spaceBetween: 20,
       },
       '540': {
@@ -27,11 +27,11 @@ export class FeaturedSliderComponent {
         spaceBetween: 20,
       },
       '768': {
-        slidesPerView: 1.4,
+        slidesPerView: 1.6,
         spaceBetween: 20,
       },
       '992': {
-        slidesPerView: 1.8,
+        slidesPerView: 2.1,
         spaceBetween: 20,
       },
       '1200': {
@@ -39,7 +39,11 @@ export class FeaturedSliderComponent {
         spaceBetween: 20,
       },
       '1400': {
-        slidesPerView: 3.1,
+        slidesPerView: 3.2,
+        spaceBetween: 20,
+      },
+      '1600': {
+        slidesPerView: 3.5,
         spaceBetween: 20,
       },
     },

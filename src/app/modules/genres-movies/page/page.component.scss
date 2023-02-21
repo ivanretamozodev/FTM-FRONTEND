@@ -1,27 +1,13 @@
-@import "/src/styles/variables";
-.button-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0;
-    gap: 1rem;
-    button{ 
-        display: block;
-        width: 140px;
-        height: 80px;
-        border: none;
-        border-radius: $border-radius;
-        background-color: $primary-color;
-        color: $white-color;
-        padding: 1rem;
-        font-size: 1.1rem;
-        transition: background-color 0.3s ease;
-        &:hover{
-            cursor: pointer;
-            cursor: pointer;
-            background-color: $grey-color;
-            color: $primary-color;
-            border: 1px solid $primary-color;
-        }}
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 1rem;
+  button {
+    @include primaryButton();
+  }
 }

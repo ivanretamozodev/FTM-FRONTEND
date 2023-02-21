@@ -13,7 +13,7 @@ export class PageComponent implements OnInit, OnDestroy {
   genres: Genre[] = [];
   movies: MovieSoftDetail[] = [];
   currentPage: number = 1;
-  totalPages: number | undefined;
+  totalPages: number = 1;
   listObservables$: Subscription[] | undefined;
   constructor(private _movieService: AllMoviesService) {}
   ngOnInit(): void {
@@ -22,9 +22,11 @@ export class PageComponent implements OnInit, OnDestroy {
   }
 
   getMovies() {
-    const observer1$: Subscription = this._movieService
-      .getMovies()
-      .subscribe((_movies) => (this.movies = _movies.movies));
+    const observer1$: Subscription = this._movieService.getMovies().subscribe((data) => {
+      this.currentPage = data.currentPage;
+      this.totalPages = data.totalPages;
+      this.movies = data.movies;
+    });
     this.listObservables$ = [observer1$];
   }
 

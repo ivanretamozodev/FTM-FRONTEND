@@ -23,9 +23,9 @@
         </p>
       </div>
       <div class="download__button">
-        <button (click)="goBack()">volver</button>
-        <button (click)="toDownload()">Descargar</button>
-        <button *ngIf="movie.link4k" (click)="toDownload()">Descargar 4k</button>
+        <button (click)="goBack()"><i class="bi bi-arrow-left"></i>Volver</button>
+        <button (click)="toDownload()">Descargar <i class="bi bi-badge-hd"></i></button>
+        <button *ngIf="movie.link4k" (click)="toDownload()">Descargar <i class="bi bi-badge-4k"></i></button>
       </div>
     </div>
   </section>

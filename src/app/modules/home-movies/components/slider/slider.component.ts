@@ -24,11 +24,11 @@ export class SliderComponent {
         spaceBetween: 20,
       },
       '768': {
-        slidesPerView: 3.5,
+        slidesPerView: 3.3,
         spaceBetween: 20,
       },
       '992': {
-        slidesPerView: 3.7,
+        slidesPerView: 4.2,
         spaceBetween: 20,
       },
       '1200': {
@@ -36,6 +36,10 @@ export class SliderComponent {
         spaceBetween: 20,
       },
       '1400': {
+        slidesPerView: 6.5,
+        spaceBetween: 20,
+      },
+      '1600': {
         slidesPerView: 7,
         spaceBetween: 20,
       },

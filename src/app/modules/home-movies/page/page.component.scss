@@ -1,10 +1,8 @@
-
-@import "/node_modules/swiper/swiper.min.css";
+@import '/node_modules/swiper/swiper.min.css';
 .swiper {
   width: 100%;
   height: 100%;
 }
-
 
 .swiper-slide {
   text-align: center;
@@ -31,8 +29,8 @@
   object-fit: cover;
 }
 
-.container{
-  h2{
+.container {
+  h2 {
     margin: 1rem 1rem 1rem 1.5rem;
     font-size: 1.6rem;
     letter-spacing: 1.3px;
