@@ -79,7 +79,7 @@ export class PageComponent implements OnInit, OnDestroy {
   }
 
   onPreviusPage(): void {
-    if (this.currentPage < 1) {
+    if (this.currentPage <= 1) {
       return;
     }
     this.currentPage--;

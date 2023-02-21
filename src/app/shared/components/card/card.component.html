@@ -1,6 +1,6 @@
 <div class="card animate__animated animate__fadeIn" [ngClass]="{ gold: movie?.featured == true }">
   <a [routerLink]="['/movie', movie?._id]">
-    <img [src]="movie?.posterImage" alt="" />
+    <img [src]="movie?.posterImage" [alt]="movie" />
     <div *ngIf="movie?.link4k" class="card__4k">
       <i class="bi bi-badge-4k"></i>
     </div>
