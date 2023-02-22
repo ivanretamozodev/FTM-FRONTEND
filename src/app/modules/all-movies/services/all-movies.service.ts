@@ -11,7 +11,7 @@ export class AllMoviesService {
 
   constructor(private _httpClient: HttpClient) {}
 
-  getMovies = (page: number = 1, limit: number = 14, genre?: string) => {
+  getMovies = (page: number = 1, limit: number = 16, genre?: string) => {
     return this._httpClient.get<MovieResponse>(
       `${this.baseUrl}/movies${genre ? '/genres' : ''}?page=${page}&genre=${genre}&limit=${limit}`
     );
@@ -23,9 +23,7 @@ export class AllMoviesService {
 
   searchMovie() {}
 
-  getGenres(limit: number = 14) {
-    return this._httpClient
-      .get<GenreResponse>(`${this.baseUrl}/genres?limit=${limit}`)
-      .pipe(map((data) => data.genres));
+  getGenres() {
+    return this._httpClient.get<GenreResponse>(`${this.baseUrl}/genres`).pipe(map((data) => data.genres));
   }
 }

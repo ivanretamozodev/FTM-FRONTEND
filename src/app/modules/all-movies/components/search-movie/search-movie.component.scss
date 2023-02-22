@@ -1,39 +1,37 @@
-@import "/src/styles/variables";
-.search-container{
-  
-    padding: 0.5rem;
-    margin: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-     input{
-        line-height: 28px;
-        border: 2px solid transparent;
-        border-bottom-color: $primary-color;
-        padding: .2rem 0;
-        outline: none;
-        background-color: transparent;
-        color: $white-color;
-        transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        &:focus, input:hover {
-            outline: none;
-        padding: .2rem 1rem;
-        border-radius: $border-radius;
-        border-color: $primary-color;
-
+@import '/src/styles/variables';
+.search-container {
+  padding: 0.5rem;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  input {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: $primary-color;
+    padding: 0.2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: $white-color;
+    transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &:focus,
+    input:hover {
+      outline: none;
+      padding: 0.2rem 1rem;
+      border-radius: $border-radius;
+      border-color: $primary-color;
     }
     &::placeholder {
-        color: $white-color;
+      color: $white-color;
     }
-    
-    &:focus::placeholder {
-        opacity: 0;
-        transition: opacity .3s;
-    }
-}
 
-select{
-    
-}
+    &:focus::placeholder {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+
+  select {
+  }
 }

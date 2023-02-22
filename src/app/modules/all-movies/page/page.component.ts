@@ -14,7 +14,7 @@ export class PageComponent implements OnInit, OnDestroy {
   movies: MovieSoftDetail[] = [];
   currentPage: number = 1;
   totalPages: number = 1;
-  limit = 14;
+  limit = 16;
   genreSelected: string = '';
   genreName: string = '';
   showGenre: boolean = false;
@@ -50,20 +50,17 @@ export class PageComponent implements OnInit, OnDestroy {
   }
 
   getGenreName() {
-    this._movieService.getGenreById(this.genreSelected).subscribe((data) => {
+    const observer3$: Subscription = this._movieService.getGenreById(this.genreSelected).subscribe((data) => {
       this.showGenre = true;
       this.genreName = data.name;
     });
+    this.listObservables$?.push(observer3$);
   }
 
   onSelectedGenre(genre: string): void {
-    this._movieService.getMovies(1, 14, genre).subscribe((data) => {
-      this.genreSelected = genre;
-      this.currentPage = data.currentPage;
-      this.totalPages = data.totalPages;
-      this.movies = data.movies;
-      this.getGenreName();
-    });
+    this.getMovies(1, this.limit, genre);
+    this.genreSelected = genre;
+    this.getGenreName();
   }
 
   onSearch(term: string): void {
