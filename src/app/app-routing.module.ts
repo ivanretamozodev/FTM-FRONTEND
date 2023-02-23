@@ -36,8 +36,12 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: '404',
+    loadChildren: () => import('./modules/404-movies/not-found.module').then((m) => m.NotFoundModule),
+  },
+  {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: '404',
   },
 ];
 
